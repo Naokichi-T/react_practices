@@ -31,25 +31,12 @@
         border: "2px solid green",
       };
 
-      // JSXを返す関数を設定
-      let printMsg = function (msg, size, color) {
-        const style = {
-          fontSize: size + "pt",
-          fontWeight: "700",
-          color: color,
-          border: "1px solid " + color,
-        };
-        return <p style={style}>{msg}</p>;
-      };
+      // フラグ設定
+      let flg = true;
 
       // 仮想Elementの作成
-      let el = (
-        <div>
-          {printMsg("最初のメッセージ", 30, "#ddd")}
-          {printMsg("次のメッセージです", 20, "#aaa")}
-          {printMsg("最後のメッセージでした", 14, "#333")}
-        </div>
-      );
+      // {真偽値 && JSXの記述}
+      let el = <div>{flg && <p style={msg}>{message}</p>}</div>;
 
       // レンダリングの実行
       // ReactDOM.render(エレメント, DOM);
