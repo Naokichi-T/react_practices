@@ -8,7 +8,7 @@ class App extends Component {
     color: "#900",
     margin: "20px 0px",
     padding: "5px",
-    boarderBottom: "2px solid #900",
+    borderBottom: "2px solid #900",
   };
 
   constructor(props) {
