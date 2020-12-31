@@ -4,21 +4,35 @@
     <meta charset="UTF-8" />
     <title>React</title>
     <!--
-        ReactのCDN(開発用)
-        https://ja.reactjs.org/docs/cdn-links.html 
+    ReactのCDN(開発用)
+    https://ja.reactjs.org/docs/cdn-links.html 
     -->
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <style>
+      #root {
+        cursor: pointer;
+        font-size: 20px;
+        background-color: lightblue;
+        padding: 1px 20px;
+      }
+    </style>
   </head>
   <body>
     <h1>React</h1>
-    <div id="root">wait...</div>
+    <div id="root" onclick="doCount();">wait...</div>
     <script>
+      let counter = 0;
       let dom = document.querySelector("#root");
-      // React.createElement(タグ名, 属性, 中に組み込まれるもの);
-      let element = React.createElement("P", {}, "Hello React!");
-      // ReactDOM.render(エレメント, DOM);
-      ReactDOM.render(element, dom);
+      doCount();
+
+      function doCount() {
+        counter++;
+        // React.createElement(タグ名, 属性, 中に組み込まれるもの);
+        let element = React.createElement("P", {}, "Count:" + counter);
+        // ReactDOM.render(エレメント, DOM);
+        ReactDOM.render(element, dom);
+      }
     </script>
   </body>
 </html>
