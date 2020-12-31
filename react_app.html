@@ -7,17 +7,18 @@
         ReactのCDN(開発用)
         https://ja.reactjs.org/docs/cdn-links.html 
     -->
-    <script
-      crossorigin
-      src="https://unpkg.com/react@17/umd/react.development.js"
-    ></script>
-    <script
-      crossorigin
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
-    ></script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
   </head>
   <body>
     <h1>React</h1>
     <div id="root">wait...</div>
+    <script>
+      let dom = document.querySelector("#root");
+      // React.createElement(タグ名, 属性, 中に組み込まれるもの);
+      let element = React.createElement("P", {}, "Hello React!");
+      // ReactDOM.render(エレメント, DOM);
+      ReactDOM.render(element, dom);
+    </script>
   </body>
 </html>
