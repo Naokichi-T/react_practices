@@ -16,24 +16,38 @@
     <h1>React</h1>
     <div id="root">wait...</div>
 
+    <!-- Babelでコンパイル -->
     <script type="text/babel">
-      // Babelでコンパイル
       // 組み込み用タグの取得
       let dom = document.querySelector("#root");
 
-      let message = "新しいメッセージです。";
+      let message = "メッセージを表示します。";
 
       // スタイル設定
-      const msg_s = {
+      const msg = {
         fontSize: "20pt",
+        fontWeight: "bold",
         color: "red",
-        border: "1px solid blue",
+        border: "2px solid green",
+      };
+
+      // JSXを返す関数を設定
+      let printMsg = function (msg, size, color) {
+        const style = {
+          fontSize: size + "pt",
+          fontWeight: "700",
+          color: color,
+          border: "1px solid " + color,
+        };
+        return <p style={style}>{msg}</p>;
       };
 
       // 仮想Elementの作成
       let el = (
         <div>
-          <p style={msg_s}>{message}</p>
+          {printMsg("最初のメッセージ", 30, "#ddd")}
+          {printMsg("次のメッセージです", 20, "#aaa")}
+          {printMsg("最後のメッセージでした", 14, "#333")}
         </div>
       );
 
