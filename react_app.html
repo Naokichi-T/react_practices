@@ -21,11 +21,14 @@
       // 組み込み用タグの取得
       let dom = document.querySelector("#root");
 
+      let title = "新タイトル";
+      let message = "新しいメッセージです。";
+
       // 仮想Elementの作成
       let el = (
         <div>
-          <h2>JSX sample</h2>
-          <p>This is sample message.</p>
+          <h2>{title}</h2>
+          <p>{message}</p>
         </div>
       );
 
