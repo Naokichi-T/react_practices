@@ -21,36 +21,18 @@
       // 組み込み用タグの取得
       let dom = document.querySelector("#root");
 
-      let message_true = "メッセージを表示します。";
-      let message_false = "メッセージはありません....";
-
-      // スタイル設定
-      const msg_true = {
-        fontSize: "20pt",
-        fontWeight: "bold",
-        color: "red",
-        border: "2px solid green",
+      const list = {
+        fontSize: "18pt",
+        padding: "5px 50px",
       };
 
-      const msg_false = {
-        fontSize: "16pt",
-        fontWeight: "plain",
-        color: "white",
-        backgroundColor: "blue",
-      };
-
-      // フラグ設定
-      let flg = true;
+      // 配列
+      let data = [<li>One</li>, <li>Two</li>, <li>Three</li>];
 
       // 仮想Elementの作成
-      // {真偽値 ? true時のJSX : false時のJSX}
       let el = (
         <div>
-          {flg ? (
-            <p style={msg_true}>{message_true}</p>
-          ) : (
-            <p style={msg_false}>{message_false}</p>
-          )}
+          <ul style={list}>{data}</ul>
         </div>
       );
 
