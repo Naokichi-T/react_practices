@@ -3,68 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <title>React</title>
-    <!--
-    ReactのCDN(開発用)
-    https://ja.reactjs.org/docs/cdn-links.html 
-    -->
     <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-    <!-- Babel-Standalone -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
   <body>
     <h1>React</h1>
     <div id="root">wait...</div>
 
-    <!-- Babelでコンパイル -->
     <script type="text/babel">
-      // 組み込み用タグの取得
       let dom = document.querySelector("#root");
 
-      // スタイル設定
-      const dfn = {
-        fontSize: "20pt",
-        padding: "10px",
-      };
-      const dt = {
-        fontSize: "16pt",
-        color: "white",
-        backgroundColor: "#006",
-        padding: "10px",
-      };
-      const dd = {
-        color: "black",
+      const p = {
+        fontSize: "20px",
         padding: "10px",
       };
 
-      // データ配列
-      let data = {
-        url: "http://google.com",
-        title: "Google",
-        caption: "※Googleの検索サイトです。",
-      };
+      var counter = 0;
 
-      // 仮想Elementの作成
-      // アロー関数で表示
-      let el = (
-        <div>
-          {(() => (
-            <dl>
-              <dt style={dt}>
-                <dfn style={dfn}>{data.title}</dfn>
-              </dt>
-              <dd style={dd}>{data.caption}</dd>
-              <dd style={dd}>
-                <a href={data.url}>※{data.title}に移動</a>
-              </dd>
-            </dl>
-          ))()}
-        </div>
-      );
-
-      // レンダリングの実行
-      // ReactDOM.render(エレメント, DOM);
-      ReactDOM.render(el, dom);
+      // setInterval(()=>{処理},1000); 1秒ごとに処理
+      setInterval(() => {
+        counter++;
+        let el = (
+          <div>
+            <p style={p}>count: {counter}</p>
+          </div>
+        );
+        ReactDOM.render(el, dom);
+      }, 1000);
     </script>
   </body>
 </html>
