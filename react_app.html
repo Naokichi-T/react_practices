@@ -16,9 +16,20 @@
     <script>
       // 組み込み用タグの取得
       let dom = document.querySelector("#root");
+
       // 仮想Elementの作成
       // React.createElement(タグ名, 属性, 中に組み込まれるもの);
-      let element = React.createElement("P", {}, "Hello React Application!");
+      //   let element = React.createElement("P", {}, "Hello React Application!");
+      let element = React.createElement("div", {}, [
+        React.createElement("h2", {}, "Hello!"),
+        React.createElement("h3", {}, "React sample page."),
+        React.createElement("ul", {}, [
+          React.createElement("li", {}, "First item."),
+          React.createElement("li", {}, "Second item."),
+          React.createElement("li", {}, "Third item."),
+        ]),
+      ]);
+
       // レンダリングの実行
       // ReactDOM.render(エレメント, DOM);
       ReactDOM.render(element, dom);
